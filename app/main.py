@@ -3,9 +3,11 @@ This file serves as the main execution for the entry point for my Clinical Trial
 """
 
 from fastapi import FastAPI
-#from app.api.routes import router
+from app.api.routes import router
 
 app = FastAPI()
+app.include_router(router)
+
 
 #next i will write my constructor
 if __name__ == "__main__" :
