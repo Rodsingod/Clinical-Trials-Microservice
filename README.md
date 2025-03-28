@@ -1,12 +1,24 @@
-# Clinical-Trials-Microservice
-This project serves as a way to fetch and receive data from clinical trials provided from clinicalTrials.gov
+after following the Install instructions you will be able to run the program and pull clinical trial data.
+1. Clone the Repo
+git clone https://github.com/Rodsingod/Clinical-Trials-Microservice.git
+cd Clinical-Trials-Microservice
 
-this project is made in python code. the creation of this application required two virtual enviornments to account for differences between python 3.11 and 3.13. the updated version sits at the top of the file structure while the created virtual environment created manually for 3.11 sits at the bottom. select which ever is appropriate for your interpreter. 
+2. Create a Virtual Environment then Activate.
+python -m venv venv
 
-Here is a good description of the nature of each file:
+venv\Scripts\activate  # On Windows
+# or
+source venv/bin/activate  # On macOS/Linux
 
-Session.py___________
-This file Tells the app how to talk to the database.
-it sets up a local SQLite file, opens a connection, and gives us a way to create or retreive records using python classes instead of SQL commands.
+3. Install Dependencies
+pip install -r requirements.txt
 
-models.py____________
+4. Initialize the Database
+python app/db/create_db.py
+
+5. Run the FastAPI App
+Execute Run in Main.py 
+
+
+In FastAPI you will be able to use both the Get/ Fetch_Data async to pull clinical trial data from the API endpoint,
+or Get/ results to view the data that has been Stored in the database to a limit 10.
