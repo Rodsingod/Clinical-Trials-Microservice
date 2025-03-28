@@ -1,24 +1,37 @@
-after following the Install instructions you will be able to run the program and pull clinical trial data.
-1. Clone the Repo
+# Clinical-Trials-Microservice
+This project serves as a way to fetch and receive data from clinical trials provided from clinicalTrials.gov
+It transforms and stores selected fields into a SQLite database
+it also provides 2 API endpoints to fetch new data and view results
+
+# Features Included
+this application utilizes Async data fetching using aiohttp
+Data transformation and storing are handled using Naitive Python and SQLAlchemy with SQLite
+I used FastAPI as my RESTAPI
+I also included a Pytest file for basic testing after the database has been created.
+
+# Requirements.
+this project is made in python code. the creation of this application required two virtual enviornments to account for differences between python 3.11 and 3.13. the updated version sits at the top of the file structure while the created virtual environment created manually for 3.11 sits at the bottom. select which ever is appropriate for your interpreter. 
+
+For Conveinience make sure you have GIT
+
+# Installation
+STEP 1. make sure you Clone the repository in the drive your python files are located to prevent pathENV issues.
+cd <your-workspace-folder>
 git clone https://github.com/Rodsingod/Clinical-Trials-Microservice.git
 cd Clinical-Trials-Microservice
 
-2. Create a Virtual Environment then Activate.
+STEP 2. Make sure you create a Virtual environment
 python -m venv venv
+#You can activate the virtual environment on Windows
+venv\Scripts\activate
 
-venv\Scripts\activate  # On Windows
-# or
-source venv/bin/activate  # On macOS/Linux
-
-3. Install Dependencies
+STEP3. Finally you can Install the dependencies
 pip install -r requirements.txt
 
-4. Initialize the Database
-python app/db/create_db.py
+# How to Run
+STEP 1. Initialize the database tables
+Run: python app/db/create_db.py
 
-5. Run the FastAPI App
-Execute Run in Main.py 
-
-
-In FastAPI you will be able to use both the Get/ Fetch_Data async to pull clinical trial data from the API endpoint,
-or Get/ results to view the data that has been Stored in the database to a limit 10.
+STEP 2. Start the FastAPI server
+Run Main.py
+in your Browser access the FastAPI UI by going to the URL: [127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
